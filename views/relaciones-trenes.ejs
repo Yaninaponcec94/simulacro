@@ -1,0 +1,15 @@
+<%- include('header.ejs') %>  <!-- Solo una vez al principio -->
+
+<div>
+    <h1>Estaciones por las que pasa el tren # <%= tren.id %></h1>
+    <p>Nombre: <%= tren.nombre %></p>
+    <p>Capacidad: <%= tren.capacidad %></p>
+</div>
+<div>
+    <% estaciones.forEach(e => { %>
+        <h1>Estación # <%= e.id %></h1>
+        <p>Nombre: <%= e.nombre %></p>
+        <p>Precio entrada: <strong><%= "$" + e.precioEntrada %></strong></p>
+        <img src="<%= '/image/estaciones/' + e.imagen %>" height="80">
+    <% }) %>
+</div>

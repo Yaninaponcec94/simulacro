@@ -1,0 +1,19 @@
+<%- include('header.ejs') %>
+<div class="container">
+    <div class="row">
+        <% estaciones.forEach(e => { %>
+            <div class="col-3 card m-1" style="width: 18rem;">
+                <img src="<%= '/image/estaciones/' + e.imagen %>" height="150" /> 
+                <div class="card-body">
+                    <h1 class="card-title">Estación # <%= e.id %></h1>
+                    <p class="card-text">Nombre: <%= e.nombre %> </p>
+                    <p class="card-text">Precio entrada: <strong> <%= "$" + e.precioEntrada %></strong></p>
+                    <button class="btn btn-info">
+                        <a href="<%= '/relaciones/estaciones/' + e.id %>" class="text-white">ver trenes</a>
+                    </button>
+                    
+                </div> 
+            </div>
+        <% }) %>
+    </div>
+</div>

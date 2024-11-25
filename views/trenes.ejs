@@ -1,0 +1,13 @@
+<%- include('header.ejs') %>
+
+<div>
+    <% trenes.forEach(t => { %>
+        <h1>Tren # <%= t.id %></h1>
+        <p>Nombre: <%= t.nombre %></p>
+        <p>Capacidad: <%= t.capacidad %></p>
+        <!-- Enlace como un botón de Bootstrap -->
+        <button class="btn btn-info">
+            <a href="<%= '/relaciones/trenes/' + t.id %>" class="text-white">Ver estaciones</a>
+        </button>
+    <% }) %>
+</div>
